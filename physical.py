@@ -16,7 +16,7 @@ def getPort():
 
 portName = getPort()
 try:
-    ser = serial.Serial(port=portName, baudrate=9600)
+    ser = serial.Serial(port="/dev/ttyAMA2", baudrate=9600)
     print("Open COM successfully")
 except:
     print('Can not open the port')
