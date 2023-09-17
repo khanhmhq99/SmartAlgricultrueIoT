@@ -78,19 +78,16 @@ def readMoisture():
     time.sleep(1)
     return serial_read_data(ser)
 
-ser.write(relay1_ON) 
-print(serial_read_data(relay1_ON))                                                                                                                                                                                              
+ser.write(relay1_ON)                                                                                                                                                                                               
 time.sleep(2)                                                                                                                                                                                                      
-ser.write(relay1_OFF)             
-print(serial_read_data(relay1_OFF))                                                                                                                                                                                  
+ser.write(relay1_OFF)                                                                                                                                                                                              
 time.sleep(2)                                                                                                                                                                                                      
 print("Xong relay1")
                                                                                                                                                                                                                    
 ser.write(relay2_ON)                                                                                                                                                                                               
 time.sleep(2)                                                                                                                                                                                                      
 ser.write(relay2_OFF)                                                                                                                                                                                              
-time.sleep(2)   
-                                                                                                                                                                                                  
+time.sleep(2)                                                                                                                                                                                                      
 print("Xong relay2")
                                                                                                                                                                                                                    
 ser.write(relay3_ON)                                                                                                                                                                                               
@@ -118,6 +115,15 @@ time.sleep(2)
 print("Xong relay6")
 
 while True:
+    print("TEST RELAY")
+    setDevice1(True)
+    time.sleep(10)
+    setDevice1(False)
+    time.sleep(10)
+    setDevice2(True)
+    time.sleep(10)
+    setDevice2(False)
+    time.sleep(10)
     print("TEST SENSOR")
     print(readMoisture())
     time.sleep(1)
